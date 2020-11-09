@@ -1,4 +1,4 @@
-package br.com.sysjsp.excecoes;
+package br.com.sysprojsp.excecoes;
 
 
 
