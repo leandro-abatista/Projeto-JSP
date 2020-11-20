@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 
 public class SingleConnection {
 	
-	private static String bancodedados = "jdbc:postgresql://localhost:5432/sys-projsp?autoReconnect=true";
-	private static String user = "admin";
+	private static String bancodedados = "jdbc:postgresql://localhost:5433/db_sistema_projsp?autoReconnect=true";
+	private static String user = "postgres";
 	private static String password = "admin";
 	private static Connection connection = null;
 

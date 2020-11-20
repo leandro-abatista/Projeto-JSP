@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-image: url("../img/desktop.png");
+	background-attachment: fixed;/*nãi deixa a imagem rolar*/
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: #000;
+}
+
+.menu h5{
+	text-align: center;
+	padding: 15px;
+	color: #FFDEAD;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*essa parte é chamada através da class da nav*/
+.menu{
+	width: 100%;
+	height: 50px;
+	background-color: #4169E1;
+	font-family: 'Lato','Roboto', sans-serif;
+	font-weight: 300;
+}
+
+.menu ul{
+	list-style: none;
+	position: relative;
+}
+
+/*para cada item das listas*/
+.menu ul li{
+	width: 150px;
+	float: left;
+}
+
+.menu a{
+	padding: 15px;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	color: #FFDEAD;
+}
+
+.menu ul ul{
+	position: absolute;
+	visibility: hidden;
+}
+
+/*quando passa o mouse aparece os subite*/
+.menu ul li:hover ul{
+	visibility: visible;
+}
+
+/*mudando a cor dos subitens*/
+.menu a:hover{
+	background-color: #1E90FF;
+	color: black;
+	font-weight: 600;
+}
+
+.menu ul ul li{
+	float: none;
+	margin-top: 2px;
+	border: solid 2px #A9A9A9;
+	border-radius: 5px;
+	width: 100%;
+}
+
+/*mudando a cor dos subitens*/
+.menu ul ul li a{
+	background-color: #4169E1;
+}
+
+label[for="btn_menu"]{
+	padding: 6px;
+	background-color: #4169E1;
+	color: white;
+	font-family: "Arial" sans-serif;
+	text-align: center;
+	font-size: 30px;
+	cursor: pointer;
+	width: 35px;
+	height: 35px;
+}
+
+img{
+	width: 35px;
+	height: 35px;
+}
+
+#btn_menu{
+	display: none;
+}
+
+label[for="btn_menu"]{
+	display: none;
+}
+
+@media(max-width: 800px){
+	
+label[for="btn_menu"]{
+		display: block;
+	}
+	
+#btn_menu:checked ~ .menu{
+		margin-left: 0px;
+	}
+	
+.menu{
+		margin-top: 5px;
+		margin-left: -100%;
+		transition: all .5s;
+	}
+	
+.menu ul li{
+		width: 100%;
+		float: none;
+	}
+	
+.menu ul ul{
+		position: static;
+		overflow: hidden;
+		max-height: 0px;
+		transition: all  .5s;
+	}
+	
+.menu ul li:hover ul{
+		height: auto;
+		max-height: 150px;/*altera esse valor de acordo com a quantidade de itens do menu*/
+	}
+
+}
+

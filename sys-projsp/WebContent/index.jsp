@@ -9,38 +9,33 @@
 
 <meta charset="UTF-8">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link href="resources/css/estiloIndex.css" type="text/css" rel="stylesheet"/>
 
-<title>Insert title here</title>
+<title>Index</title>
 
 </head>
 
 <body>
-
-	<h2>Recursos Avançados em Java Usando JSP</h2>
 	
-	<table>
-		<tbody>
-		
-			<tr>
-			
-				<td><a href="pages/capturarExcecoes.jsp"></a>Captura exceções</td>
-				
-			</tr>
-			
-			<tr>
-				
-				<td><a href="pages/acessoSistema.jsp">Acessar o sistema</a></td>
-			
-			</tr>
-			
-			<tr>
-			
-				<td><a href="pages/paginaPai.jsp">Load jQuery</a></td>
-				
-			</tr>
-			
-		</tbody>
-	</table>
+	<nav>
+	 
+	 	<p>Sistema WEB com JSP, SERVLET, JDBC E BANCO DE DADOS POSTGRESQL</p>
+	 	
+	 	<ul>
+	 		
+	 		<li><a href="#">ACESSO AO SISTEMA</a>
+	 		
+	 			<ul>
+	 			
+	 				<li><a href="pages/acessoSistema.jsp">Acessar Sistema</a></li>
+	 			
+	 			</ul>
+	 		
+	 		</li>
+	 		
+	 	</ul>
+	
+	</nav>
 
 </body>
 
