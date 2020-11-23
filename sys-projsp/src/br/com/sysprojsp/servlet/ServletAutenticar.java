@@ -32,6 +32,9 @@ public class ServletAutenticar extends HttpServlet {
 			sessao.invalidate();
 			// redireciona para a página de index para realizar o login novamente, para ter
 			// acesso ao sistema
+			//HttpServletResponse httpResponse = (HttpServletResponse) response;
+			//httpResponse.sendRedirect("../autenticacao.jsp");
+			//return;
 			response.sendRedirect("../index.jsp");
 		}
 	}
@@ -58,7 +61,7 @@ public class ServletAutenticar extends HttpServlet {
 
 			} else {//se o login e senha forem inválidos
 
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/acessoNegado.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/autenticacao.jsp");
 				dispatcher.forward(request, response);
 
 			}

@@ -8,8 +8,10 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="description" content="Sistema Web com JSP">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link href="resources/css/estiloIndex.css" type="text/css" rel="stylesheet"/>
+<link rel="icon" href="resources/img/icon.png"/>
 
 <title>Index</title>
 
@@ -34,8 +36,9 @@
 	 		</li>
 	 		
 	 	</ul>
-	
+	 	
 	</nav>
+	
 
 </body>
 

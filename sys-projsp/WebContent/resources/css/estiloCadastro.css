@@ -1,0 +1,301 @@
+@charset "ISO-8859-1";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+section{
+	margin: 1em;
+}
+
+body{
+	font-family: gotham, arial, helvetica, sans-serif;
+}
+
+a{
+	text-align: center;
+	border: 2em;
+	background: #7FFFD4;
+	margin: 10px;
+	height: 10px;
+	line-height: 5px;
+	padding: 8px 5px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);/*muda a sobra do botão*/
+	text-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);/*muda a sobra do texto*/
+}
+
+a:hover{
+	background: #FB0;
+	box-shadow: inset 2px 2px 2px rgba(0,0,0,0.3);
+	text-shadow: none;
+}
+
+.div-a{
+	cursor: pointer;
+	text-align: center;
+    font-weight: bold;
+	text-decoration: none;
+	font-size: 1.3em;
+	background: #008B8B;
+	border: 1px;
+	margin-left: 5px;
+	color: #FFF;/*cor do texto*/
+	padding: 0.3em 0.6em;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);/*muda a sobra do botão*/
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);/*muda a sobra do texto*/
+}
+
+.div-a:hover{
+	background: #FB0;
+	box-shadow: inset 2px 2px 2px rgba(0,0,0,0.3);
+	text-shadow: none;
+	color: black;
+	text-decoration: none;
+}
+
+
+fieldset{
+	border: 0;
+}
+
+input, select, button{
+	font-family: sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+
+.div-cadastrousuario h1{
+	text-transform: uppercase;
+	color: #FFF;
+	font-size: 23px;
+	font-weight: 600;
+	text-align: center;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #4682B4;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	/*
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+	box-sizing: border-box;
+	*/
+}
+
+	
+.div-dadosusuario h2{
+	text-transform: uppercase;
+	color: #FFF;
+	font-size: 21px;
+	font-weight: 600;
+	text-align: center;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #4682B4;
+	margin-bottom: 15px;
+	padding: 0;
+	/*
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+	box-sizing: border-box;
+	*/
+}
+
+.div-h4 h4{
+	color: #C0C0C0;
+	font-size: 12px;
+	background-color: #4682B4;
+	width: 15%;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 8px 2px 5px;
+}
+
+.grupo:before, .grupo:after{
+	content: " ";
+	display: table;
+}
+
+.grupo:after {
+	clear: both;
+}
+
+.campo{
+	margin-bottom: 0.8em;
+}
+
+.campo label {
+	margin-left: 0.5em;
+	margin-bottom: 0.2em;
+	color: #00008B;
+	display: block;
+	font-weight: bold;
+}
+
+fieldset.grupo .campo {
+	float: left;
+	margin-right: 1em;
+}
+
+.campo input[type="text"],
+.campo input[type="password"],
+.campo input[type="date"],
+.campo input[type="number"],
+.campo input[type="search"],
+.campo select
+{
+	margin-left: 0.5em;
+	padding: 0.2em; /*tamanho dos campos*/
+	border: 1px solid #ccc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);/*mostra a sombra dos campos*/
+	display: block;
+}
+
+
+.campo input[type=checkbox]{
+	margin-left: 0.5em;
+	padding: 0.3em; /*tamanho dos campos*/
+	border: 1px solid #ccc;
+	display: block;
+	-moz-transform: scale(1.7); /* FF */
+  	-webkit-transform: scale(1.7); /* Safari and Chrome*/
+  	transform: scale(1.7);
+}
+*/
+
+.campo input[type=radio]{
+	margin-left: 0.5em;
+	padding: 0.3em; /*tamanho dos campos*/
+	border: 1px solid #ccc;
+	display: block;
+	-moz-transform: scale(1.7); /* FF */
+  	-webkit-transform: scale(1.7); /* Safari and Chrome */
+  	transform: scale(1.7);
+}
+
+.campo textarea{
+	margin-left: 0.5em;
+	padding: 0.3em; /*tamanho dos campos*/
+	border: 1px solid #ccc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);/*mostra a sombra dos campos*/
+	display: block;
+}
+
+.campo select option{
+	background: #ffc;
+}
+
+.campo label.checkbox {
+	color: #00008B;
+	display: inline-block;
+	margin-right: 1em;
+	-moz-transform: scale(1.7); /* FF */
+  	-webkit-transform: scale(1.7); /* Safari and Chrome */
+  	transform: scale(1.7);
+}
+
+.botao{
+	border-radius: 5px;
+	font-size: 1.3em;
+	background: #008B8B;
+	border: 1px;
+	margin-bottom: 2em;
+	margin-top: 1em;
+	margin-left: 0.5em;
+	margin-right: 0.1em;
+	color: #FFF;/*cor do texto*/
+	padding: 0.2em 0.6em;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);/*muda a sobra do botão*/
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);/*muda a sobra do texto*/
+} 
+
+.botao:hover{
+	background: #FB0;
+	box-shadow: inset 2px 2px 2px rgba(0,0,0,0.3);
+	text-shadow: none;
+}
+
+.botao, select, label.checkbox{
+	cursor: pointer;
+}
+
+.formulario{
+	width: 100%;
+	position: absolute;
+	background: linear-gradient(#FFE4E1,#A9A9A9);
+	box-shadow: 3px 2px 2px rgba(0,0,0,0.3);
+	display: inline-block;
+}
+
+/* personalizar a barra em geral, aqui estou definindo 10px de largura para a barra vertical
+e 10px de altura para a barra horizontal */
+::-webkit-scrollbar {
+	width:10px;
+	height: 10px;
+}
+ 
+/* aqui é para personalizar o fundo da barra, neste caso estou colocando um fundo cinza escuro*/
+::-webkit-scrollbar-track {
+	background:#DCDCDC;
+}
+ 
+/* aqui é a alça da barra, que demonstra a altura que você está na página
+estou colocando uma cor azul clara nela*/
+::-webkit-scrollbar-thumb {
+	background: #708090;
+}
+
+/*==========================================================================================================*/
+
+.campoPesquisar label {
+	margin-left: 0.5em;
+	margin-bottom: 0.2em;
+	color: #00008B;
+	display: block;
+	font-weight: bold;
+}
+
+fieldset.grupo .campoPesquisar {
+	float: left;
+	margin-right: 1em;
+}
+
+.campoPesquisar input[type="text"]{
+	width: 30em;
+	margin-left: 0.5em;
+	padding: 0.2em; /*tamanho dos campos*/
+	border: 1px solid #ccc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);/*mostra a sombra dos campos*/
+	display: block;
+}
+
+.botaoPesquisar{
+	border-radius: 5px;
+	font-size: 1.3em;
+	background: #F90;
+	border: 1px;
+	margin-top: 1.1em;
+	/*
+	margin-bottom: 2em;
+	margin-left: 0.5em;
+	margin-right: 0.1em;*/
+	color: #000;/*cor do texto*/
+	padding: 0.1em 0.6em;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);/*muda a sobra do botão*/
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);/*muda a sobra do texto*/
+} 
+
+.botaoPesquisar:hover{
+	background: #FB0;
+	box-shadow: inset 2px 2px 2px rgba(0,0,0,0.3);
+	text-shadow: none;
+}
+
+.botaoPesquisar{
+	cursor: pointer;
+}
+
+

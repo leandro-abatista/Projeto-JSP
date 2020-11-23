@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8"%>
 
-
 <!DOCTYPE html>
 
 <html>
@@ -8,30 +7,52 @@
 <head>
 
 <meta charset="UTF-8">
-<link href="resources/css/estiloLogin.css" type="text/css" rel="stylesheet"/>
-
-<title>Autenticação</title>
+<meta name="description" content="Sistema Web com JSP">
+<link rel="stylesheet" type="text/css" href="resources/css/estiloAutenticar.css">
+<link rel="icon" href="resources/img/icon.png"/>
+<title>Tela Autenticar</title>
 </head>
 
 <body>
+
+	<h1>Seja Bem Vindo ao Sistema de Gerenciamento WEB em JSP</h1>
+
+	<div class="caixaLogin">
 	
-	<div class="form">
-	
-		<h1>Login</h1>
+		<div class="img-user">
+			<img alt="" src="resources/img/user-login.png">
+		</div>
 		
-			<form action="servletAutenticar" method="post">
+		<h2>Logar no Sistema</h2>
+		
+		<form action="servletAutenticar" method="post">
+		
+			<input id="url" name="url" type="hidden" readonly="readonly" value="<%= request.getParameter("url")%>"/>
+		
+			<div class="campo">
+				<input type="text" id="login" name="login" required="required">
+				<label>Usuário</label>
+			</div>
 			
-				<input id="url" name="url" type="hidden" readonly="readonly" value="<%= request.getParameter("url")%>"/>
-				
-				<label>Usuário:</label>
-				<input type="text" id="login" name="login" placeholder="Informe o usuário" required="required"/>
-					
-				<label>Senha:</label>
-				<input type="password" id="senha" name="senha" placeholder="Informe a senha" required="required"/>
-					
-				<button type="submit" class="btn" value="logar">Acessar</button>
+			<div class="campo">
+				<input type="password" id="senha" name="senha" required="required">
+				<label>Senha</label>
+			</div>
 			
-			</form>
+			<input type="checkbox" checked="checked" class="checkbox">
+			<label class="checkbox2">Lembrar-me</label><br><br>
+			
+			<button type="submit" value="logar">Acessar</button>
+			
+			<p id="cadastro">Efetuar Cadastro</p>
+			
+		</form>
+	
+	</div>
+	
+	<div>
+		
+		<h5></h5>
 	
 	</div>
 

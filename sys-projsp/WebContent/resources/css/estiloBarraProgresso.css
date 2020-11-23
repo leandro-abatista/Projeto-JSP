@@ -1,0 +1,31 @@
+#fundoBarProgress {
+	width: 100%;
+	background-color: #DDD;
+	position: relative;
+}
+
+#carregamento{
+	width: 0%;
+	height: 30px;
+	background-color: #4CAF50;
+	/*animation: progress-animation 6s infinite;*/
+}
+
+@keyframes progress-animation{
+    0% { width: 0%; }
+    
+    100% { width: 100%;}
+    
+}
+
+.ui-progressbar{
+	position: relative;
+}
+
+.progress-label{
+	position: relative;
+	left: 50%;
+	top: 6px;
+	font-weight: bold;
+	font-size: 20px;
+}

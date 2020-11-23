@@ -9,14 +9,18 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="description" content="Sistema Web com JSP">
 <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
 <link rel="stylesheet" href="../resources/css/estiloMenu.css">
+<link rel="icon" href="../resources/img/icon.png"/>
 <title>Menu</title>
 
 </head>
 
 <body>
 
+	<hr>
+	
 	<nav class="menu">
 
 		<ul>
@@ -35,8 +39,14 @@
 
 				<ul>
 
-					<li><a href="#">Cadastro Usuários</a></li>
-					
+					<li><a href="servletUsuario?acao=listartodos">Usuários</a></li>
+					<li><a href="servletCliente?acao=listartodos">Clientes</a></li>
+					<li><a href="servletMedico?acao=listartodos">Médicos</a></li>
+					<li><a href="servletProduto?acao=listartodos">Produtos</a></li>
+					<li><a href="servletProdutoCsv?acao=listartodos">Produtos CSV</a></li>
+					<li><a href="servletBandeira?acao=listartodos">Bandeiras</a></li>
+					<li><a href="servletCategoria?acao=listartodos">Categorias</a></li>
+					<li><a href="servletEspecialidade?acao=listartodos">Especialidades</a></li>
 
 				</ul>
 			
@@ -48,7 +58,10 @@
 
 				<ul>
 
-					
+					<li><a href="servletConsCli?acao=listartodos">Clientes</a></li>
+					<li><a href="#">Médicos</a></li>
+					<li><a href="servletConsPro?acao=listartodos">Produtos</a></li>
+					<li><a href="#">Produtos CSV</a></li>
 
 				</ul>
 				
@@ -60,8 +73,8 @@
 
 				<ul>
 
-					<li><a href="#">Sobre o Sistema</a></li>
-					<li><a href="#">Sobre o Desenvolvedor</a></li>
+					<li><a href="#">Sistema</a></li>
+					<li><a href="#">Desenvolvedor</a></li>
 
 				</ul>
 				
@@ -71,7 +84,7 @@
 
 				<ul>
 
-					<li><a href="pages/servletAutenticar?deslogar=true">Logout</a></li>
+					<li><a href="servletAutenticar?deslogar=true">Logout</a></li>
 
 				</ul>
 				
