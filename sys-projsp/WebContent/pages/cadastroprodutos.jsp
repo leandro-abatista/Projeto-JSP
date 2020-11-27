@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt"%>
 
@@ -102,7 +102,7 @@
 							<label for="categorias">Categoria:*</label>
 							<select id="categorias" name="id_categoria">
 							
-								<option disabled="disabled" selected="selected">Selecione uma Opção</option>
+								<option disabled="disabled" selected="selected">[- Selecione -]</option>
 								
 								<c:forEach items="${categorias}" var="cate">
 									<option  id="${cate.id}" value="${cate.id}"

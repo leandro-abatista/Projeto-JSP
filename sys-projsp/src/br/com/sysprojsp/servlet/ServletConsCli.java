@@ -18,7 +18,7 @@ import org.apache.tomcat.util.codec.binary.Base64;
 import br.com.sysprojsp.classes.model.Cliente;
 import br.com.sysprojsp.dao.ClienteDao;
 
-@WebServlet("/pages/ServletConsCli")
+@WebServlet("/pages/servletConsCli")
 public class ServletConsCli extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

@@ -35,21 +35,28 @@ public class ServletUsuario extends HttpServlet {
 		String acao = request.getParameter("acao");
 		String user = request.getParameter("user");
 		
-		if (acao.equalsIgnoreCase("delete")) {
+		if (acao != null && acao.equalsIgnoreCase("consultar")) {
+			Usuario usuario = dao.consultarU(user);
+			
+			RequestDispatcher view = request.getRequestDispatcher("/pages/cadastrousuarios.jsp");
+			request.setAttribute("user", usuario);
+			view.forward(request, response);
+			
+		} else if (acao != null && acao.equalsIgnoreCase("delete")) {
 			dao.deleteU(user);
 			
 			RequestDispatcher view = request.getRequestDispatcher("/pages/cadastrousuarios.jsp");
 			request.setAttribute("usuarios", dao.listarTodos());
 			view.forward(request, response);
 			
-		} else if(acao.equalsIgnoreCase("update")){
+		} else if(acao != null && acao.equalsIgnoreCase("update")){
 			Usuario acessoJsp = dao.consultarU(user);
 			
 			RequestDispatcher view = request.getRequestDispatcher("/pages/cadastrousuarios.jsp");
 			request.setAttribute("user", acessoJsp);
 			view.forward(request, response);
 			
-		} else if(acao.equalsIgnoreCase("listartodos")){
+		} else if(acao != null && acao.equalsIgnoreCase("listartodos")){
 	
 			RequestDispatcher view = request.getRequestDispatcher("/pages/cadastrousuarios.jsp");
 			request.setAttribute("usuarios", dao.listarTodos());
@@ -99,12 +106,19 @@ public class ServletUsuario extends HttpServlet {
 			acesso.setPerfil(perfil);
 			
 			
-			String msg = null;
+			String msg;
 			boolean podeInserir = true;
+			
+			
 			
 			if (id == null || id.isEmpty() && !dao.validarUsuario(login)) {/*isso quando for usuário novo*/
 				msg = "Já existe cadastro com este usuário!";
 				podeInserir = false;
+				
+				if (msg != null || !msg.isEmpty()) {
+						request.setAttribute("msg", msg);
+				}
+				
 			} 
 			
 			/*quando for salvar ou atualizar*/
@@ -112,10 +126,19 @@ public class ServletUsuario extends HttpServlet {
 				dao.salvarU(acesso);
 				msg = "Registro salvo com sucesso!";
 				
+				if (msg != null || !msg.isEmpty()) {
+					request.setAttribute("msg", msg);
+				}
+				
 			} else if(id != null && !id.isEmpty() && podeInserir) {
 				dao.updateU(acesso);
 				msg = "Registro atualizado com sucesso!";
+				
+				if (msg != null || !msg.isEmpty()) {
+					request.setAttribute("msg", msg);
+				}
 			}
+			
 			
 			RequestDispatcher view = request.getRequestDispatcher("/pages/cadastrousuarios.jsp");
 			request.setAttribute("usuarios", dao.listarTodos());

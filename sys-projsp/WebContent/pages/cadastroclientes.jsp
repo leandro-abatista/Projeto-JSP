@@ -376,7 +376,7 @@
 							</c:if>
 
 							<td style="width: 8%;"><a href="servletCliente?acao=update&cli=${cli.id}">
-									<img alt="update" src="../resources/img/editar.png"
+									<img alt="update" src="../resources/img/edit.png"
 									title="Atualizar" style="width: 24px; height: 24px;">
 							</a></td>
 

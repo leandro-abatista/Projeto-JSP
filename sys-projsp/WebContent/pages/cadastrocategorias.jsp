@@ -115,12 +115,12 @@
 
 
 							<td style="width: 8%;"><a href="servletCategoria?acao=update&categoria=${categoria.id}">
-									<img alt="update" src="resources/img/editar.png"
+									<img alt="update" src="../resources/img/editar.png"
 									title="Atualizar" style="width: 24px; height: 24px;">
 							</a></td>
 
 							<td style="width: 8%;"><a href="servletCategoria?acao=delete&categoria=${categoria.id}">
-									<img alt="delete" src="resources/img/excluir.png"
+									<img alt="delete" src="../resources/img/excluir.png"
 									title="Excluir" style="width: 24px; height: 24px;">
 							</a></td>
 

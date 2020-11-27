@@ -48,6 +48,7 @@
 							<th style="width: 15%; text-align: center;">Valor Compra</th>
 							<th style="width: 15%; text-align: center;">Valor Item</th>
 							<th style="width: 10%; text-align: center;">Categoria</th>
+							<th style="width: 10%; text-align: center;">Detalhes</th>
 						</tr>
 
 					</thead>
@@ -72,6 +73,8 @@
 								<td style="width: 15%;"><fmt:formatNumber type="currency" maxFractionDigits="2" value="${produto.valorcompra}"/></td>
 								<td style="width: 15%;"><fmt:formatNumber type="currency" maxFractionDigits="2" value="${produto.valoritem}"/></td>
 								<td style="width: 10%;"><c:out value="${produto.categoria}"></c:out></td>
+								<td style="width: 8%;"><a href=""><img src="../resources/img/documento.png" 
+								alt="Detalhes" title="Detalhes do Produto" style="width: 24px; height: 24px;"></a></td>
 								
 							</tr>
 
@@ -86,7 +89,7 @@
 		</form>
 
 	</section>
-
+	
 	<script type="text/javascript">
 		$(window).on(
 				"load resize ",

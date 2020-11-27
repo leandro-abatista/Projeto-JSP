@@ -21,7 +21,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    
+
+<link rel="icon" href="../resources/img/icon.png">
 <title>Cadastro de Usuários</title>
 </head>
 
@@ -43,6 +44,10 @@
 			
 			<div class="div-h4">
 				<h4>Campos obrigatórios com (*)</h4>
+			</div>
+			
+			<div id="div-mensagem" class="div-h3">
+				<h3>${msg}</h3>
 			</div>
 			
 			<!-- agrupa os campos -->
@@ -233,10 +238,10 @@
 				</fieldset>
 				
 					
-				<button type="submit" class="botao submit" value="Salvar">Salvar</button>
+				<button id="addModal" type="submit" class="botao submit" value="Salvar">Salvar</button>
 				
 				<button type="submit" class="botao submit" value="Cancelar"
-				onclick="document.getElementById('formulario').action = 'ServletUsuario?acao=reset'">Cancelar</button>
+				onclick="document.getElementById('formulario').action = 'servletUsuario?acao=reset'">Cancelar</button>
 				
 			
 			</fieldset>
@@ -278,11 +283,12 @@
 					
 						<tr>
 							<th style="width: 8%; text-align: center;">Código</th>
-							<th style="width: 30%; text-align: center;">Nome</th>
+							<th style="width: 25%; text-align: center;">Nome</th>
 							<th style="width: 20%; text-align: center;">Login</th>
 							<th style="width: 20%; text-align: center;">Senha</th>
 							<th style="width: 15%; text-align: center;">Telefone</th>
-							<th style="width: 25%; text-align: center;">E-mail</th>
+							<th style="width: 20%; text-align: center;">E-mail</th>
+							<th style="width: 8%; text-align: center;">#</th>
 							<th style="width: 8%; text-align: center;">#</th>
 							<th style="width: 8%; text-align: center;">#</th>
 						</tr>
@@ -303,26 +309,34 @@
 					
 						<tr>
 							
-							<td style="width: 8%;"><c:out value="${user.id}"></c:out></td>				
-							<td style="width: 30%;"><c:out value="${user.primeironome} ${user.sobrenome} ${user.ultimonome}"></c:out></td>				
-							<td style="width: 20%;"><c:out value="${user.login}"></c:out></td>				
-							<td style="width: 20%;"><c:out value="${user.senha}"></c:out></td>				
-							<td style="width: 15%;"><c:out value="${user.telefone}"></c:out></td>				
-							<td style="width: 25%;"><c:out value="${user.email}"></c:out></td>				
+							<td id="id${user.id}" style="width: 8%;"><c:out value="${user.id}"></c:out></td>				
+							<td id="primeironome${user.id}" style="width: 25%;"><c:out value="${user.primeironome} ${user.sobrenome} ${user.ultimonome}"></c:out></td>				
+							<td id="login${user.id}" style="width: 20%;"><c:out value="${user.login}"></c:out></td>				
+							<td id="senha${user.id}" style="width: 20%;"><c:out value="${user.senha}"></c:out></td>				
+							<td id="telefone${user.id}" style="width: 15%;"><c:out value="${user.telefone}"></c:out></td>				
+							<td id="email${user.id}" style="width: 20%;"><c:out value="${user.email}"></c:out></td>				
 							
 							<td style="width: 8%;">
-								<a href="servletUsuario?acao=update&user=${user.id}">
-								<img alt="update" src="../resources/img/editar.png" title="Atualizar" 
-								style="width: 20px; height: 20px;">
+								<a href="servletUsuario?acao=update&user=${user.id}" type="button">
+								<img alt="update" src="../resources/img/edit.png" title="Atualizar" 
+								style="width: 24px; height: 24px;">
 								</a>
 							</td>	
 							
 										
 							<td style="width: 8%;">
-								<a href="servletUsuario?acao=delete&user=${user.id}">
+								<a href="servletUsuario?acao=delete&user=${user.id}" type="button"
+								data-confirm='Tem certeza que deseja apagar o registro selecionado?'>
 								<img alt="delete" src="../resources/img/excluir.png" title="Excluir" 
-								style="width: 20px; height: 20px;" 
-								onclick="return confirm('Confirma a exclusão do registro?');">
+								style="width: 24px; height: 24px;">
+								</a>
+							</td>
+							
+							<td style="width: 8%;">
+								<a href="servletUsuario?acao=delete&user=${user.id}" type="button" 
+								class="btn btn-primary visualizar" data-toggle="modal" data-target="#dialogDados">
+								<img alt="visualizar" src="../resources/img/documento.png" title="Visualizar" 
+								style="width: 24px; height: 24px;">
 								</a>
 							</td>				
 						
@@ -336,58 +350,91 @@
 		
 		</div>
 		
-	</section>	
+	</section>
+	
+	<div id="msg" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header bg-success text-white">
+		        <h5 class="modal-title" id="exampleModalLabel">Usuário</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		       <p>Registro Cadastrado com Sucesso!</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-outline-info" data-dismiss="modal">Fechar</button>
+		    
+		      </div>
+		    </div>
+		  </div>
+		</div>	
+		
+		
+		
+		<!-- Modal -->
+		<div class="modal fade" id="dialogDados" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header bg-primary text-white">
+		        <h5 class="modal-title" id="staticBackdropLabel">Dados do Usuário</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      
+		      	
+		      		
+		      		<table id="tabelaDados">
+		      		
+		      		
+		      			
+		      		
+		      		
+		      		</table>
+		      	
+		      	
+		      	
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 	
 	<script type="text/javascript">
 
-	var msg = "<strong>registro salvo com sucesso!</strong>";
-	
+		/*script para janela de confirmação de exclusão de registro*/
+		$(document).ready(function() {
+			$('a[data-confirm]').click(function(ev){
+				var href = $(this).attr('href');
+				if (!$('#confirm-delete').length) {
+					$('body').append('<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header bg-danger text-white">Excluir Registro<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body">Tem certeza que deseja apagar o registro selecionado?</div><div class="modal-footer"><button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button><a type="button" class="btn btn-danger text-white" id="dataConfirmOK">Apagar</a></div></div></div></div>');
+				}
+				$('#dataConfirmOK').attr('href', href);
+				$('#confirm-delete').modal({show:true});
+				return false;
 
-	function mostraDialogo(mensagem, tipo, tempo){
-	    
-	    // se houver outro alert desse sendo exibido, cancela essa requisição
-	    if($("#message").is(":visible")){
-	        return false;
-	    }
+			}); 		
+		});
 
-	    // se não setar o tempo, o padrão é 3 segundos
-	    if(!tempo){
-	        var tempo = 3000;
-	    }
+		
+		$().ready(function() {
+			setTimeout(function () {
+				$('#div-mensagem').hide(); // "foo" é o id do elemento que seja manipular.
+			}, 3000); // O valor é representado em milisegundos.
+		});
 
-	    // se não setar o tipo, o padrão é alert-info
-	    if(!tipo){
-	        var tipo = "info";
-	    }
+		
+		/*===================================================================================================================================*/
+			
+		
 
-	    // monta o css da mensagem para que fique flutuando na frente de todos elementos da página
-	    var cssMessage = "display: block; position: fixed; top: 0; left: 20%; right: 20%; width: 60%; padding-top: 10px; z-index: 9999";
-	    var cssInner = "margin: 0 auto; box-shadow: 1px 1px 5px black;";
-
-	    // monta o html da mensagem com Bootstrap
-	    var dialogo = "";
-	    dialogo += '<div id="message" style="'+cssMessage+'">';
-	    dialogo += '    <div class="alert alert-'+tipo+' alert-dismissable" style="'+cssInner+'">';
-	    dialogo += '    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>';
-	    dialogo +=          mensagem;
-	    dialogo += '    </div>';
-	    dialogo += '</div>';
-
-	    // adiciona ao body a mensagem com o efeito de fade
-	    $("body").append(dialogo);
-	    $("#message").hide();
-	    $("#message").fadeIn(200);
-
-	    // contador de tempo para a mensagem sumir
-	    setTimeout(function() {
-	        $('#message').fadeOut(300, function(){
-	            $(this).remove();
-	        });
-	    }, tempo); // milliseconds
-
-	}
-
-	
+		/*===================================================================================================================================*/
 	</script>
 	
 </body>

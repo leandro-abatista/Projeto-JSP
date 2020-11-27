@@ -273,7 +273,7 @@ public class ServletCliente extends HttpServlet {
 			if (id == null || id.isEmpty() && clienteDao.validarCpfCli(cpf) && podeInserir) {
 
 				clienteDao.salvarC(cliente);
-				msg = "Registro salvo com sucesso!";
+				msg = "<script>Registro salvo com sucesso!</script>";
 
 			} else
 
